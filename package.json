@@ -1,0 +1,36 @@
+{
+  "name": "draggable-photos",
+  "version": "1.0.0",
+  "description": "A draggable slider for overlapping before/after images.",
+  "main": "index.js",
+  "scripts": {
+    "prepush": "if [ \"$(git branch)\" == \"* master\" ]; then npm version patch && npm publish; fi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnwatkins0/draggable-photos.git"
+  },
+  "author": "John Watkins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnwatkins0/draggable-photos/issues"
+  },
+  "homepage": "https://github.com/johnwatkins0/draggable-photos#readme",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "react-draggable": "^2.2.3"
+  }
+}
