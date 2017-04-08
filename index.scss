@@ -1,0 +1,73 @@
+.draggable-photos-container {
+	padding-left: 0;
+	padding-right: 0;
+
+	.draggable-photos {
+		position: relative;
+		padding-left: 0;
+		padding-right: 0;
+
+		> div:not(:first-of-type) {
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-position: center left;
+			background-size: auto 100%;
+		}
+
+		div.react-draggable {
+			position: absolute;
+	    top: 0px;
+	    right: 0px;
+	    left: 0px;
+	    bottom: 0px;
+
+			.handle {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 50%;
+				background: white;
+				width: 5px;
+				cursor: pointer;
+
+				&:after {
+					content: '••';
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: absolute;
+					top: 40%;
+					left: -1rem;
+					height: 2.25rem;
+					width: 2.25rem;
+					font-size: 1rem;
+					border-radius: 1.5rem;
+					color: $gray;
+					background: $gray-lightest;
+					border: 1px solid $gray;
+					transform: scale(.97);
+					transition: transform .2s;
+				}
+
+				&:hover:after {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}
+
+.react-draggable:after {
+	content: 'Slide left/right';
+	@extend .caption;
+	position: absolute;
+	bottom: -1.5rem;
+	right: 0;
+	left: 0;
+	text-align: center;
+}
