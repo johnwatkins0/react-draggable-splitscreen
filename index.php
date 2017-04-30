@@ -15,6 +15,11 @@ add_action( 'init', function() {
 		} else if ( isset( $atts['image-1'] ) && isset( $atts['vimeo'] ) ) {
 			$left = $atts['image-1'];
 			$right = $atts['vimeo'];
+			$right_is_vimeo = '-vimeo';
+		} else if ( isset( $atts['image-2'] ) && isset( $atts['vimeo'] ) ) {
+			$right = $atts['image-2'];
+			$left = $atts['vimeo'];
+			$left_is_vimeo = '-vimeo';
 		}
 
 
@@ -38,8 +43,8 @@ add_action( 'init', function() {
 		return "
 			<div
 				class=draggable-photos-container
-				data-left=$left
-				data-right=$right
+				data-left={$left}{$left_is_vimeo}
+				data-right={$right}{$right_is_vimeo}
 				$data_string>
 			</div>";
 	} );

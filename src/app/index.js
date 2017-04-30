@@ -2,41 +2,72 @@ import React from 'react';
 import Draggable from 'react-draggable';
 import PropTypes from 'prop-types';
 
+import LeftSide from './left-side';
+import RightSide from './right-side';
+
 export default class DraggableReveal extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { rightPosition: 0 };
+    this.state = { rightPosition: 0, width: 0 };
 
     this.handle = (
       <div>
-        <div className="handle" />
+        <div
+          className={
+            `handle${this.props['start-at']
+              ? ` handle--${this.props['start-at']}`
+              : ''}`
+          }
+        />
       </div>
     );
+
+    this.handleDrag = this.handleDrag.bind(this);
+    this.width = 0;
+  }
+
+  componentDidMount() {
+    this.width = this.container.clientWidth;
+  }
+
+  handleDrag() {
+    if (this.draggable) {
+      this.setState({ rightPosition: this.draggable.state.x });
+    }
   }
 
   drawDraggableImages() {
     return (
-      <div className="draggable-photos">
-        <div className="draggable-photos__container">
-          <img src={this.props.left} alt="" />
-        </div>
-        <div
-          style={{
-            width: `calc(50% + ${this.state.rightPosition}px)`,
-            backgroundImage: `url(${this.props.right})`,
-          }}
-          className="draggable-photos__container"
+      <div
+        ref={(div) => {
+          this.container = div;
+        }}
+        className={
+          `draggable-photos draggable-photos--${this.props['start-at']}`
+        }
+      >
+        <LeftSide
+          content={this.props.left}
+          rightPosition={this.state.rightPosition}
+          startAt={this.props['start-at']}
+          width={this.width}
+        />
+        <RightSide
+          content={this.props.right}
+          rightPosition={this.state.rightPosition}
+          startAt={this.props['start-at']}
+          width={this.width}
         />
         <Draggable
+          bounds={{ left: 0, right: this.width }}
           handle=".handle"
           ref={(draggable) => {
             this.draggable = draggable;
           }}
           zIndex={100}
           axis="x"
-          onDrag={() =>
-            this.setState({ rightPosition: this.draggable.state.x })}
+          onDrag={this.handleDrag}
         >
           {this.handle}
         </Draggable>
@@ -54,6 +85,14 @@ export default class DraggableReveal extends React.Component {
   }
 }
 
-DraggableReveal.defaultProps = { left: null, right: null };
+DraggableReveal.defaultProps = {
+  left: null,
+  right: null,
+  'start-at': 'middle',
+};
 
-DraggableReveal.propTypes = { left: PropTypes.string, right: PropTypes.string };
+DraggableReveal.propTypes = {
+  left: PropTypes.string,
+  right: PropTypes.string,
+  'start-at': PropTypes.string,
+};

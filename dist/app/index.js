@@ -18,6 +18,14 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _leftSide = require('./left-side');
+
+var _leftSide2 = _interopRequireDefault(_leftSide);
+
+var _rightSide = require('./right-side');
+
+var _rightSide2 = _interopRequireDefault(_rightSide);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -34,48 +42,69 @@ var DraggableReveal = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (DraggableReveal.__proto__ || Object.getPrototypeOf(DraggableReveal)).call(this, props));
 
-    _this.state = { rightPosition: 0 };
+    _this.state = { rightPosition: 0, width: 0 };
 
     _this.handle = _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement('div', { className: 'handle' })
+      _react2.default.createElement('div', {
+        className: 'handle' + (_this.props['start-at'] ? ' handle--' + _this.props['start-at'] : '')
+      })
     );
+
+    _this.handleDrag = _this.handleDrag.bind(_this);
+    _this.width = 0;
     return _this;
   }
 
   _createClass(DraggableReveal, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.width = this.container.clientWidth;
+    }
+  }, {
+    key: 'handleDrag',
+    value: function handleDrag() {
+      if (this.draggable) {
+        this.setState({ rightPosition: this.draggable.state.x });
+      }
+    }
+  }, {
     key: 'drawDraggableImages',
     value: function drawDraggableImages() {
       var _this2 = this;
 
       return _react2.default.createElement(
         'div',
-        { className: 'draggable-photos' },
-        _react2.default.createElement(
-          'div',
-          { className: 'draggable-photos__container' },
-          _react2.default.createElement('img', { src: this.props.image1, alt: '' })
-        ),
-        _react2.default.createElement('div', {
-          style: {
-            width: 'calc(50% + ' + this.state.rightPosition + 'px)',
-            backgroundImage: 'url(' + this.props.image2 + ')'
+        {
+          ref: function ref(div) {
+            _this2.container = div;
           },
-          className: 'draggable-photos__container'
+          className: 'draggable-photos draggable-photos--' + this.props['start-at']
+        },
+        _react2.default.createElement(_leftSide2.default, {
+          content: this.props.left,
+          rightPosition: this.state.rightPosition,
+          startAt: this.props['start-at'],
+          width: this.width
+        }),
+        _react2.default.createElement(_rightSide2.default, {
+          content: this.props.right,
+          rightPosition: this.state.rightPosition,
+          startAt: this.props['start-at'],
+          width: this.width
         }),
         _react2.default.createElement(
           _reactDraggable2.default,
           {
+            bounds: { left: 0, right: this.width },
             handle: '.handle',
             ref: function ref(draggable) {
               _this2.draggable = draggable;
             },
             zIndex: 100,
             axis: 'x',
-            onDrag: function onDrag() {
-              return _this2.setState({ rightPosition: _this2.draggable.state.x });
-            }
+            onDrag: this.handleDrag
           },
           this.handle
         )
@@ -85,7 +114,7 @@ var DraggableReveal = function (_React$Component) {
     key: 'render',
     value: function render() {
       var content = void 0;
-      if (this.props.image1 !== null && this.props.image2 !== null) {
+      if (this.props.left !== null && this.props.left !== null) {
         content = this.drawDraggableImages.bind(this)();
       }
 
@@ -99,9 +128,14 @@ var DraggableReveal = function (_React$Component) {
 exports.default = DraggableReveal;
 
 
-DraggableReveal.defaultProps = { image1: null, image2: null };
+DraggableReveal.defaultProps = {
+  left: null,
+  right: null,
+  'start-at': 'middle'
+};
 
 DraggableReveal.propTypes = {
-  image1: _propTypes2.default.string,
-  image2: _propTypes2.default.string
+  left: _propTypes2.default.string,
+  right: _propTypes2.default.string,
+  'start-at': _propTypes2.default.string
 };

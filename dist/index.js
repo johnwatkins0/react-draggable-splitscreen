@@ -1,5 +1,4 @@
 'use strict';
-console.log('what');
 
 var _react = require('react');
 
@@ -11,32 +10,18 @@ var _app = require('./app');
 
 var _app2 = _interopRequireDefault(_app);
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-function drawDraggableSectionWithImages(settings) {
-  var props = { image1: settings.image1, image2: settings.image2 };
-
-  (0, _reactDom.render)(
-    _react2.default.createElement(_app2.default, props),
-    settings.container
-  );
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function drawDraggableSection(container) {
-  var image1 = container.getAttribute('data-image-1') ||
-    container.getAttribute('data-1');
-  var image2 = container.getAttribute('data-image-2') ||
-    container.getAttribute('data-1');
+  var props = {
+    left: container.getAttribute('data-left'),
+    right: container.getAttribute('data-right'),
+    'instruction-text': container.getAttribute('data-instruction-text'),
+    'start-at': container.getAttribute('data-start-at'),
+    type: container.getAttribute('data-type')
+  };
 
-  if (image1 && image2) {
-    drawDraggableSectionWithImages({
-      container: container,
-      image1: image1,
-      image2: image2
-    });
-  }
+  (0, _reactDom.render)(_react2.default.createElement(_app2.default, props), container);
 }
 
 function run() {

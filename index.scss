@@ -2,31 +2,42 @@ $gray: #9E9E9E !default;
 $gray-lightest: #f5f5f5 !default;
 
 .draggable-photos-container {
-	padding-left: 0;
 	padding-right: 0;
+	padding-left: 0;
 
 	.draggable-photos {
 		position: relative;
-		padding-left: 0;
 		padding-right: 0;
+		padding-left: 0;
+
+		> div {
+			position: relative;
+			z-index: 1;
+		}
 
 		> div:not(:first-of-type) {
-			height: 100%;
 			position: absolute;
 			top: 0;
-			left: 0;
-			bottom: 0;
 			right: 0;
+			bottom: 0;
+			z-index: 2;
+			height: 100%;
 			background-position: center left;
 			background-size: auto 100%;
+		}
+
+		&.draggable-photos--left {
+			> div:not(:first-of-type) {
+				background-position: center right;
+			}
 		}
 
 		div.react-draggable {
 			position: absolute;
 	    top: 0px;
 	    right: 0px;
-	    left: 0px;
 	    bottom: 0px;
+	    left: 0px;
 
 			.handle {
 				position: absolute;
@@ -34,27 +45,37 @@ $gray-lightest: #f5f5f5 !default;
 				right: 0;
 				bottom: 0;
 				left: 50%;
-				background: white;
 				width: 5px;
+				background: $brand-success;
 				cursor: pointer;
 
 				&:after {
-					content: '••';
-					display: flex;
-					align-items: center;
-					justify-content: center;
 					position: absolute;
 					top: 40%;
 					left: -1rem;
-					height: 2.25rem;
+					display: flex;
+					padding-bottom: .25rem;
 					width: 2.25rem;
-					font-size: 1rem;
+					height: 2.25rem;
+					border: 1px solid white;
 					border-radius: 1.5rem;
-					color: $gray;
 					background: $gray-lightest;
-					border: 1px solid $gray;
-					transform: scale(.97);
+					color: white;
+					content: '▸';
+					font-size: 1.26rem;
 					transition: transform .2s;
+					transform: scale(.97);
+
+					align-items: center;
+					justify-content: center;
+				}
+
+				&.handle--left {
+					left: 0;
+
+					&:after {
+						background: $brand-success;
+					}
 				}
 
 				&:hover:after {
@@ -66,11 +87,18 @@ $gray-lightest: #f5f5f5 !default;
 }
 
 .react-draggable:after {
-	content: 'Slide left/right';
-	@extend .caption;
 	position: absolute;
-	bottom: -1.5rem;
 	right: 0;
+	bottom: -1.5rem;
 	left: 0;
+	color: $gray;
+	content: 'Slide left/right';
 	text-align: center;
+	font-style: italic;
+	font-size: .891rem;
+}
+
+.draggable-photos--left .react-draggable:after {
+	content: 'Drag to reveal video';
+	text-align: left;
 }
