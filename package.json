@@ -1,6 +1,6 @@
 {
   "name": "draggable-photos",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A draggable slider for overlapping before/after images.",
   "main": "index.js",
   "scripts": {
