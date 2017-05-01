@@ -44,9 +44,8 @@ export default class LeftSide extends React.Component {
   }
 
   addPlayerListeners() {
-    this.player.on('loaded', () => {
-      this.player.element.style.opacity = 1;
-    });
+    this.player.on('loaded', this.props.reveal);
+
     this.player.on('loaded', () => {
       resizeIframe(this.player.element);
     });
@@ -66,7 +65,7 @@ export default class LeftSide extends React.Component {
           }}
           className="draggable-photos__container"
         >
-          <img src={this.props.content} alt="" />
+          <img src={this.props.content} alt="" onLoad={this.props.reveal} />
         </div>
       );
     }
@@ -84,6 +83,7 @@ export default class LeftSide extends React.Component {
 
 LeftSide.propTypes = {
   content: PropTypes.string.isRequired,
+  reveal: PropTypes.func.isRequired,
   rightPosition: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,
 };

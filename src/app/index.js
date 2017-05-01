@@ -9,7 +9,7 @@ export default class DraggableReveal extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { rightPosition: 0, width: 0 };
+    this.state = { rightPosition: 0, width: 0, opacity: 0 };
 
     this.handle = (
       <div>
@@ -24,6 +24,7 @@ export default class DraggableReveal extends React.Component {
     );
 
     this.handleDrag = this.handleDrag.bind(this);
+    this.reveal = this.reveal.bind(this);
     this.width = 0;
   }
 
@@ -37,9 +38,14 @@ export default class DraggableReveal extends React.Component {
     }
   }
 
+  reveal() {
+    this.setState({ opacity: 1 });
+  }
+
   drawDraggableImages() {
     return (
       <div
+        style={{ opacity: this.state.opacity, transition: 'opacity .4s' }}
         ref={(div) => {
           this.container = div;
         }}
@@ -52,6 +58,7 @@ export default class DraggableReveal extends React.Component {
           rightPosition={this.state.rightPosition}
           startAt={this.props['start-at']}
           width={this.width}
+          reveal={this.reveal}
         />
         <RightSide
           content={this.props.right}

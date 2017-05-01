@@ -42,7 +42,7 @@ var DraggableReveal = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (DraggableReveal.__proto__ || Object.getPrototypeOf(DraggableReveal)).call(this, props));
 
-    _this.state = { rightPosition: 0, width: 0 };
+    _this.state = { rightPosition: 0, width: 0, opacity: 0 };
 
     _this.handle = _react2.default.createElement(
       'div',
@@ -53,6 +53,7 @@ var DraggableReveal = function (_React$Component) {
     );
 
     _this.handleDrag = _this.handleDrag.bind(_this);
+    _this.reveal = _this.reveal.bind(_this);
     _this.width = 0;
     return _this;
   }
@@ -70,6 +71,11 @@ var DraggableReveal = function (_React$Component) {
       }
     }
   }, {
+    key: 'reveal',
+    value: function reveal() {
+      this.setState({ opacity: 1 });
+    }
+  }, {
     key: 'drawDraggableImages',
     value: function drawDraggableImages() {
       var _this2 = this;
@@ -77,6 +83,7 @@ var DraggableReveal = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         {
+          style: { opacity: this.state.opacity, transition: 'opacity .4s' },
           ref: function ref(div) {
             _this2.container = div;
           },
@@ -86,7 +93,8 @@ var DraggableReveal = function (_React$Component) {
           content: this.props.left,
           rightPosition: this.state.rightPosition,
           startAt: this.props['start-at'],
-          width: this.width
+          width: this.width,
+          reveal: this.reveal
         }),
         _react2.default.createElement(_rightSide2.default, {
           content: this.props.right,

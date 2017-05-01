@@ -90,9 +90,8 @@ var LeftSide = function (_React$Component) {
     value: function addPlayerListeners() {
       var _this3 = this;
 
-      this.player.on('loaded', function () {
-        _this3.player.element.style.opacity = 1;
-      });
+      this.player.on('loaded', this.props.reveal);
+
       this.player.on('loaded', function () {
         (0, _resizeIframe2.default)(_this3.player.element);
       });
@@ -115,7 +114,7 @@ var LeftSide = function (_React$Component) {
             },
             className: 'draggable-photos__container'
           },
-          _react2.default.createElement('img', { src: this.props.content, alt: '' })
+          _react2.default.createElement('img', { src: this.props.content, alt: '', onLoad: this.props.reveal })
         );
       }
 
@@ -136,6 +135,7 @@ exports.default = LeftSide;
 
 LeftSide.propTypes = {
   content: _propTypes2.default.string.isRequired,
+  reveal: _propTypes2.default.func.isRequired,
   rightPosition: _propTypes2.default.number.isRequired,
   width: _propTypes2.default.number.isRequired
 };

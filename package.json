@@ -4,6 +4,7 @@
   "description": "A draggable slider for overlapping before/after images.",
   "main": "index.js",
   "scripts": {
+		"start": "gulp",
     "prepush": "if [ \"$(git branch)\" == \"* master\" ]; then npm version patch && npm publish; fi"
   },
   "repository": {
