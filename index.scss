@@ -1,7 +1,7 @@
 $gray: #9E9E9E !default;
 $gray-lightest: #f5f5f5 !default;
 
-.draggable-photos-container {
+[data-draggable-photos] {
 	padding-right: 0;
 	padding-left: 0;
 
@@ -10,26 +10,15 @@ $gray-lightest: #f5f5f5 !default;
 		padding-right: 0;
 		padding-left: 0;
 
-		> div {
-			position: relative;
-			z-index: 1;
-		}
-
 		> div:not(:first-of-type) {
 			position: absolute;
 			top: 0;
 			right: 0;
 			bottom: 0;
-			z-index: 2;
+			left: 0;
 			height: 100%;
 			background-position: center left;
 			background-size: auto 100%;
-		}
-
-		&.draggable-photos--left {
-			> div:not(:first-of-type) {
-				background-position: center right;
-			}
 		}
 
 		div.react-draggable {
@@ -46,7 +35,7 @@ $gray-lightest: #f5f5f5 !default;
 				bottom: 0;
 				left: 50%;
 				width: 5px;
-				background: $brand-success;
+				background: white;
 				cursor: pointer;
 
 				&:after {
@@ -54,28 +43,19 @@ $gray-lightest: #f5f5f5 !default;
 					top: 40%;
 					left: -1rem;
 					display: flex;
-					padding-bottom: .25rem;
 					width: 2.25rem;
 					height: 2.25rem;
-					border: 1px solid white;
+					border: 1px solid $gray;
 					border-radius: 1.5rem;
 					background: $gray-lightest;
-					color: white;
-					content: '▸';
-					font-size: 1.26rem;
+					color: $gray;
+					content: '••';
+					font-size: 1rem;
 					transition: transform .2s;
 					transform: scale(.97);
 
 					align-items: center;
 					justify-content: center;
-				}
-
-				&.handle--left {
-					left: 0;
-
-					&:after {
-						background: $brand-success;
-					}
 				}
 
 				&:hover:after {
@@ -94,11 +74,5 @@ $gray-lightest: #f5f5f5 !default;
 	color: $gray;
 	content: 'Slide left/right';
 	text-align: center;
-	font-style: italic;
-	font-size: .891rem;
-}
-
-.draggable-photos--left .react-draggable:after {
-	content: 'Drag to reveal video';
-	text-align: left;
+	font-size: .794rem;
 }

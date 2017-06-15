@@ -1,11 +1,11 @@
 import React from 'react';
-import Draggable from 'react-draggable';
 import PropTypes from 'prop-types';
+import Draggable from 'react-draggable';
 
 import LeftSide from './left-side';
 import RightSide from './right-side';
 
-export default class DraggableReveal extends React.Component {
+class DraggablePhotos extends React.Component {
   constructor(props) {
     super(props);
 
@@ -14,11 +14,7 @@ export default class DraggableReveal extends React.Component {
     this.handle = (
       <div>
         <div
-          className={
-            `handle${this.props['start-at']
-              ? ` handle--${this.props['start-at']}`
-              : ''}`
-          }
+          className={`handle${this.props['start-at'] ? ` handle--${this.props['start-at']}` : ''}`}
         />
       </div>
     );
@@ -42,16 +38,14 @@ export default class DraggableReveal extends React.Component {
     this.setState({ opacity: 1 });
   }
 
-  drawDraggableImages() {
+  render() {
     return (
       <div
         style={{ opacity: this.state.opacity, transition: 'opacity .4s' }}
         ref={(div) => {
           this.container = div;
         }}
-        className={
-          `draggable-photos draggable-photos--${this.props['start-at']}`
-        }
+        className={`draggable-photos draggable-photos--${this.props['start-at']}`}
       >
         <LeftSide
           content={this.props.left}
@@ -81,25 +75,16 @@ export default class DraggableReveal extends React.Component {
       </div>
     );
   }
-
-  render() {
-    let content;
-    if (this.props.left !== null && this.props.left !== null) {
-      content = this.drawDraggableImages.bind(this)();
-    }
-
-    return content || null;
-  }
 }
 
-DraggableReveal.defaultProps = {
-  left: null,
-  right: null,
-  'start-at': 'middle',
+DraggablePhotos.defaultProps = {
+  'start-at': 'center',
 };
 
-DraggableReveal.propTypes = {
-  left: PropTypes.string,
-  right: PropTypes.string,
+DraggablePhotos.propTypes = {
+  left: PropTypes.string.isRequired,
+  right: PropTypes.string.isRequired,
   'start-at': PropTypes.string,
 };
+
+export default DraggablePhotos;

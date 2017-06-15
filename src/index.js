@@ -1,23 +1,66 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { render } from 'react-dom';
+import Draggable from 'react-draggable';
 
-import DraggableReveal from './app';
+export default class DraggablePhotos extends React.Component {
+  static get propTypes() {
+    return {
+      image1: PropTypes.string.isRequired,
+      image2: PropTypes.string.isRequired,
+    };
+  }
 
-function drawDraggableSection(container) {
-  const props = {
-    left: container.getAttribute('data-left'),
-    right: container.getAttribute('data-right'),
-    'instruction-text': container.getAttribute('data-instruction-text'),
-    'start-at': container.getAttribute('data-start-at'),
-    type: container.getAttribute('data-type'),
-  };
+  constructor(props) {
+    super(props);
 
-  render(<DraggableReveal {...props} />, container);
+    this.state = { rightPosition: 0 };
+  }
+
+  render() {
+    return (
+      <div className="draggable-photos">
+        <div className="draggable-photos__container">
+          <img alt="" src={this.props.image1} />
+        </div>
+        <div
+          style={{
+            width: `calc(50% + ${this.state.rightPosition}px)`,
+            backgroundImage: `url(${this.props.image2})`,
+          }}
+          className="draggable-photos__container"
+        />
+        <Draggable
+          handle=".handle"
+          ref={draggable => (this.draggable = draggable)}
+          zIndex={100}
+          axis="x"
+          onDrag={() => {
+            this.setState({ rightPosition: this.draggable.state.x });
+          }}
+        >
+          <div>
+            <div className="handle" />
+          </div>
+        </Draggable>
+      </div>
+    );
+  }
 }
 
-function run() {
-  const containers = document.querySelectorAll('.draggable-photos-container');
-  [].forEach.call(containers, drawDraggableSection);
-}
+window.addEventListener('load', () => {
+  const containers = document.querySelectorAll('[data-draggable-photos]');
 
-window.addEventListener('load', run);
+  [].forEach.call(containers, (container) => {
+    const image1 = container.getAttribute('data-1');
+    const image2 = container.getAttribute('data-2');
+
+    if (!(image1 && image2)) {
+      return;
+    }
+
+    const props = { image1, image2 };
+
+    render(<DraggablePhotos {...props} />, container);
+  });
+});
