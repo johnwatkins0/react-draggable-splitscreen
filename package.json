@@ -1,7 +1,8 @@
 {
-  "name": "draggable-photos",
+  "name": "react-draggable-splitscreen",
   "version": "1.0.5",
-  "description": "A draggable slider for overlapping before/after images.",
+  "description":
+    "A React component for displaying overlapping elements with a draggable splitscreen-like effect.",
   "main": "src/index.js",
   "scripts": {
     "start":
@@ -15,14 +16,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnwatkins0/draggable-photos.git"
+    "url": "git+https://github.com/johnwatkins0/react-draggable-splitscreen.git"
   },
   "author": "John Watkins",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/johnwatkins0/draggable-photos/issues"
+    "url": "https://github.com/johnwatkins0/react-draggable-splitscreen/issues"
   },
-  "homepage": "https://github.com/johnwatkins0/draggable-photos#readme",
+  "homepage":
+    "https://github.com/johnwatkins0/react-draggable-splitscreen#readme",
   "dependencies": {
     "prop-types": "^15.5.8",
     "react": "^16.2.0",
