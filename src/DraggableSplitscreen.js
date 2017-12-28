@@ -39,6 +39,9 @@ export default class DraggableSplitscreen extends React.Component {
   render() {
     const LeftSide = this.props.leftSide;
     const RightSide = this.props.rightSide;
+    const clipPathStyle = `inset(0 0 0 calc(50% + ${
+      this.state.rightPosition
+    }px))`;
 
     return (
       <StyledContainer className="DraggableSplitscreen">
@@ -46,9 +49,10 @@ export default class DraggableSplitscreen extends React.Component {
           <LeftSide />
         </StyledLeftSide>
         <StyledRightSide
-          clipPathStyle={`inset(0 0 0 calc(50% + ${
-            this.state.rightPosition
-          }px))`}
+          style={{
+            clipPath: clipPathStyle,
+          }}
+          clipPathStyle={clipPathStyle}
           className="DraggableSplitscreen__right-side"
         >
           <RightSide />
