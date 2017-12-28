@@ -4,7 +4,7 @@ import DraggableSplitscreen from '../../src/DraggableSplitscreen';
 
 const LeftSide = () => (
   <img
-    src="/example/assets/left-side.png"
+    src="/react-draggable-splitscreen/example/assets/left-side.png"
     alt="Left Side"
     style={{ width: '100%', height: 'auto' }}
   />
@@ -12,7 +12,7 @@ const LeftSide = () => (
 
 const RightSide = () => (
   <img
-    src="/example/assets/right-side.png"
+    src="/react-draggable-splitscreen/example/assets/right-side.png"
     alt="Right Side"
     style={{ width: '100%', height: 'auto' }}
   />

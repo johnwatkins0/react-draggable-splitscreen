@@ -4,8 +4,10 @@
   "description": "A draggable slider for overlapping before/after images.",
   "main": "src/index.js",
   "scripts": {
-    "start": "parcel example/src/index.html -d example -o",
-    "build": "parcel build example/src/index.html -d example",
+    "start":
+      "parcel example/src/index.html -d example -o --public-url /react-draggable-splitscreen/example/",
+    "build":
+      "parcel build example/src/index.html -d example --public-url /react-draggable-splitscreen/example/",
     "lint": "eslint src",
     "prepare": "npm run build",
     "pretest": "npm run lint",

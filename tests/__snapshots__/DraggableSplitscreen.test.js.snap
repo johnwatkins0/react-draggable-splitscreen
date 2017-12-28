@@ -9,7 +9,7 @@ exports[`Image-based element renders correctly. 1`] = `
   >
     <img
       alt="Left Side"
-      src="/example/assets/left-side.png"
+      src="/react-draggable-splitscreen/example/assets/left-side.png"
       style={
         Object {
           "height": "auto",
@@ -23,7 +23,7 @@ exports[`Image-based element renders correctly. 1`] = `
   >
     <img
       alt="Right Side"
-      src="/example/assets/right-side.png"
+      src="/react-draggable-splitscreen/example/assets/right-side.png"
       style={
         Object {
           "height": "auto",
