@@ -1,13 +1,10 @@
 module.exports = {
-  env: { es6: true },
-  extends: [ 'eslint:recommended', 'airbnb' ],
-  globals: { process: true, console: true, window: true, document: true },
-  parserOptions: {
-    ecmaFeatures: { experimentalObjectRestSpread: true, jsx: true },
-    sourceType: 'module'
-  },
+  parser: 'babel-eslint',
+  env: { browser: true, es6: true, 'jest/globals': true },
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  plugins: ['jest'],
   rules: {
-    'no-console': [ 'error', { allow: [ 'error' ] } ],
-    'react/jsx-filename-extension': 0
-  }
+    'react/jsx-filename-extension': 0,
+    'react/jsx-uses-vars': [2],
+  },
 };

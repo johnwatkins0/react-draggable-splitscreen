@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image-based element renders correctly. 1`] = `
+<div
+  className="DraggableSplitscreen sc-bdVaJa cQtrjW"
+>
+  <div
+    className="DraggableSplitscreen__left-side sc-bwzfXH uTxCW"
+  >
+    <img
+      alt="Left Side"
+      src="/example/assets/left-side.png"
+      style={
+        Object {
+          "height": "auto",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="DraggableSplitscreen__right-side sc-htpNat hkAeFy"
+  >
+    <img
+      alt="Right Side"
+      src="/example/assets/right-side.png"
+      style={
+        Object {
+          "height": "auto",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="DraggableSplitscreen__handle react-draggable sc-bxivhb kRBqZl"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "touchAction": "none",
+        "transform": "translate(0px,0px)",
+      }
+    }
+    transform={null}
+  />
+</div>
+`;
+
+exports[`Text-based element renders correctly. 1`] = `
+<div
+  className="DraggableSplitscreen sc-bdVaJa cQtrjW"
+>
+  <div
+    className="DraggableSplitscreen__left-side sc-bwzfXH uTxCW"
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "blue",
+          "padding": "6rem",
+        }
+      }
+    >
+      <h2>
+        <a
+          href="#"
+          style={
+            Object {
+              "color": "white",
+            }
+          }
+        >
+          Left side
+        </a>
+      </h2>
+    </div>
+  </div>
+  <div
+    className="DraggableSplitscreen__right-side sc-htpNat hkAeFy"
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "red",
+          "padding": "6rem",
+          "textAlign": "right",
+        }
+      }
+    >
+      <h2>
+        <a
+          href="#"
+          style={
+            Object {
+              "color": "white",
+            }
+          }
+        >
+          Right side
+        </a>
+      </h2>
+    </div>
+  </div>
+  <div
+    className="DraggableSplitscreen__handle react-draggable sc-bxivhb kRBqZl"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "touchAction": "none",
+        "transform": "translate(0px,0px)",
+      }
+    }
+    transform={null}
+  />
+</div>
+`;
+
+exports[`Video-based element renders correctly. 1`] = `
+<div
+  className="DraggableSplitscreen sc-bdVaJa cQtrjW"
+>
+  <div
+    className="DraggableSplitscreen__left-side sc-bwzfXH uTxCW"
+  >
+    <video
+      autoPlay={true}
+      loop={true}
+      muted={true}
+      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+      style={
+        Object {
+          "height": "auto",
+          "objectFit": "inherit",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="DraggableSplitscreen__right-side sc-htpNat hkAeFy"
+  >
+    <video
+      autoPlay={true}
+      loop={true}
+      muted={true}
+      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+      style={
+        Object {
+          "height": "auto",
+          "objectFit": "inherit",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="DraggableSplitscreen__handle react-draggable sc-bxivhb kRBqZl"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "touchAction": "none",
+        "transform": "translate(0px,0px)",
+      }
+    }
+    transform={null}
+  />
+</div>
+`;
