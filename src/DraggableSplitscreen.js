@@ -54,26 +54,21 @@ export default class DraggableSplitscreen extends React.Component {
    * @return {ReactElement}
    */
   render = () => (
-    <StyledContainer className="DraggableSplitscreen">
-      <StyledLeftSide className="DraggableSplitscreen__left-side">
+    <StyledContainer>
+      <StyledLeftSide>
         {this.props.leftSide}
       </StyledLeftSide>
-      <StyledRightSide
-        style={{ clipPath: this.clipPath }}
-        clipPathStyle={this.clipPath}
-        className="DraggableSplitscreen__right-side"
-      >
+      <StyledRightSide clipPathStyle={this.clipPath}>
         {this.props.rightSide}
       </StyledRightSide>
       <Draggable
-        handle=".DraggableSplitscreen__handle"
         ref={this.bindRef}
         zIndex={100}
         bounds="parent"
         axis="x"
         onDrag={this.onDrag}
       >
-        <StyledHandle className="DraggableSplitscreen__handle" />
+        <StyledHandle />
       </Draggable>
     </StyledContainer>
   )
