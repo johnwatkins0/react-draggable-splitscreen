@@ -1,6 +1,6 @@
 {
   "name": "react-draggable-splitscreen",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A React component for displaying overlapping elements with a draggable splitscreen-like effect.",
   "main": "src/index.js",
   "scripts": {
