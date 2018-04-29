@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Image from '../example/src/Image';
-import Text from '../example/src/Text';
-import Video from '../example/src/Video';
+import Image from '../../example/src/Image';
+import Text from '../../example/src/Text';
+import Video from '../../example/src/Video';
 
 describe('DraggableSplitscreen', () => {
   it('renders an image-based element.', () => {

@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Draggable from 'react-draggable';
 
-import StyledContainer from './StyledContainer';
-import StyledLeftSide from './StyledLeftSide';
-import StyledRightSide from './StyledRightSide';
-import StyledHandle from './StyledHandle';
+import Container from './Container';
+import RightSide from './RightSide';
+import Handle from './Handle';
 
 /**
  * The main component.
@@ -54,13 +53,13 @@ export default class DraggableSplitscreen extends React.Component {
    * @return {ReactElement}
    */
   render = () => (
-    <StyledContainer>
-      <StyledLeftSide>
+    <Container>
+      <div>
         {this.props.leftSide}
-      </StyledLeftSide>
-      <StyledRightSide clipPathStyle={this.clipPath}>
+      </div>
+      <RightSide clipPathStyle={this.clipPath}>
         {this.props.rightSide}
-      </StyledRightSide>
+      </RightSide>
       <Draggable
         ref={this.bindRef}
         zIndex={100}
@@ -68,8 +67,9 @@ export default class DraggableSplitscreen extends React.Component {
         axis="x"
         onDrag={this.onDrag}
       >
-        <StyledHandle />
+        <Handle />
       </Draggable>
-    </StyledContainer>
+    </Container>
   )
 }
+
