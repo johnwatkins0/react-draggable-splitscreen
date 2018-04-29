@@ -1,60 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Image-based element renders correctly. 1`] = `
-<div
-  className="DraggableSplitscreen sc-bdVaJa cQtrjW"
->
-  <div
-    className="DraggableSplitscreen__left-side sc-bwzfXH uTxCW"
-  >
-    <img
-      alt="Left Side"
-      src="/react-draggable-splitscreen/example/assets/left-side.png"
-      style={
-        Object {
-          "height": "auto",
-          "width": "100%",
-        }
-      }
-    />
-  </div>
-  <div
-    className="DraggableSplitscreen__right-side sc-htpNat hkAeFy"
-    style={
-      Object {
-        "clipPath": "inset(0 0 0 calc(50% + 0px))",
-      }
-    }
-  >
-    <img
-      alt="Right Side"
-      src="/react-draggable-splitscreen/example/assets/right-side.png"
-      style={
-        Object {
-          "height": "auto",
-          "width": "100%",
-        }
-      }
-    />
-  </div>
-  <div
-    className="DraggableSplitscreen__handle react-draggable sc-bxivhb kRBqZl"
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchStart={[Function]}
-    style={
-      Object {
-        "touchAction": "none",
-        "transform": "translate(0px,0px)",
-      }
-    }
-    transform={null}
-  />
-</div>
-`;
-
-exports[`Text-based element renders correctly. 1`] = `
+exports[`DraggableSplitscreen renders a text-based element 1`] = `
 <div
   className="DraggableSplitscreen sc-bdVaJa cQtrjW"
 >
@@ -70,16 +16,7 @@ exports[`Text-based element renders correctly. 1`] = `
       }
     >
       <h2>
-        <a
-          href="#"
-          style={
-            Object {
-              "color": "white",
-            }
-          }
-        >
-          Left side
-        </a>
+        Left side
       </h2>
     </div>
   </div>
@@ -101,16 +38,7 @@ exports[`Text-based element renders correctly. 1`] = `
       }
     >
       <h2>
-        <a
-          href="#"
-          style={
-            Object {
-              "color": "white",
-            }
-          }
-        >
-          Right side
-        </a>
+        Right side
       </h2>
     </div>
   </div>
@@ -131,7 +59,7 @@ exports[`Text-based element renders correctly. 1`] = `
 </div>
 `;
 
-exports[`Video-based element renders correctly. 1`] = `
+exports[`DraggableSplitscreen renders a video-based element 1`] = `
 <div
   className="DraggableSplitscreen sc-bdVaJa cQtrjW"
 >
@@ -169,6 +97,60 @@ exports[`Video-based element renders correctly. 1`] = `
         Object {
           "height": "auto",
           "objectFit": "inherit",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="DraggableSplitscreen__handle react-draggable sc-bxivhb kRBqZl"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "touchAction": "none",
+        "transform": "translate(0px,0px)",
+      }
+    }
+    transform={null}
+  />
+</div>
+`;
+
+exports[`DraggableSplitscreen renders an image-based element. 1`] = `
+<div
+  className="DraggableSplitscreen sc-bdVaJa cQtrjW"
+>
+  <div
+    className="DraggableSplitscreen__left-side sc-bwzfXH uTxCW"
+  >
+    <img
+      alt="Left Side"
+      src="/react-draggable-splitscreen/example/assets/left-side.png"
+      style={
+        Object {
+          "height": "auto",
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+  <div
+    className="DraggableSplitscreen__right-side sc-htpNat hkAeFy"
+    style={
+      Object {
+        "clipPath": "inset(0 0 0 calc(50% + 0px))",
+      }
+    }
+  >
+    <img
+      alt="Right Side"
+      src="/react-draggable-splitscreen/example/assets/right-side.png"
+      style={
+        Object {
+          "height": "auto",
           "width": "100%",
         }
       }

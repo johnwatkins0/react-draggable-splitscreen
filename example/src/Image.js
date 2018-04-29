@@ -19,7 +19,7 @@ const RightSide = () => (
 );
 
 const Image = () => (
-  <DraggableSplitscreen leftSide={LeftSide} rightSide={RightSide} />
+  <DraggableSplitscreen leftSide={<LeftSide />} rightSide={<RightSide />} />
 );
 
 export default Image;

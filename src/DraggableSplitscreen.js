@@ -17,8 +17,8 @@ export default class DraggableSplitscreen extends React.Component {
    */
   static get propTypes() {
     return {
-      leftSide: PropTypes.func.isRequired,
-      rightSide: PropTypes.func.isRequired,
+      leftSide: PropTypes.objectOf(PropTypes.any).isRequired,
+      rightSide: PropTypes.objectOf(PropTypes.any).isRequired,
     };
   }
 
@@ -30,48 +30,51 @@ export default class DraggableSplitscreen extends React.Component {
     super(props);
 
     this.state = { rightPosition: 0 };
+
+    this.onDrag = this.onDrag.bind(this);
+    this.bindRef = this.bindRef.bind(this);
+  }
+
+  onDrag() {
+    this.setState({ rightPosition: this.draggable.state.x });
+  }
+
+  get clipPath() {
+    return `inset(0 0 0 calc(50% + ${
+      this.state.rightPosition
+    }px))`;
+  }
+
+  bindRef(element) {
+    this.draggable = element;
   }
 
   /**
    * JSX output.
    * @return {ReactElement}
    */
-  render() {
-    const LeftSide = this.props.leftSide;
-    const RightSide = this.props.rightSide;
-    const clipPathStyle = `inset(0 0 0 calc(50% + ${
-      this.state.rightPosition
-    }px))`;
-
-    return (
-      <StyledContainer className="DraggableSplitscreen">
-        <StyledLeftSide className="DraggableSplitscreen__left-side">
-          <LeftSide />
-        </StyledLeftSide>
-        <StyledRightSide
-          style={{
-            clipPath: clipPathStyle,
-          }}
-          clipPathStyle={clipPathStyle}
-          className="DraggableSplitscreen__right-side"
-        >
-          <RightSide />
-        </StyledRightSide>
-        <Draggable
-          handle=".DraggableSplitscreen__handle"
-          ref={draggable => {
-            this.draggable = draggable;
-          }}
-          zIndex={100}
-          bounds="parent"
-          axis="x"
-          onDrag={() => {
-            this.setState({ rightPosition: this.draggable.state.x });
-          }}
-        >
-          <StyledHandle className="DraggableSplitscreen__handle" />
-        </Draggable>
-      </StyledContainer>
-    );
-  }
+  render = () => (
+    <StyledContainer className="DraggableSplitscreen">
+      <StyledLeftSide className="DraggableSplitscreen__left-side">
+        {this.props.leftSide}
+      </StyledLeftSide>
+      <StyledRightSide
+        style={{ clipPath: this.clipPath }}
+        clipPathStyle={this.clipPath}
+        className="DraggableSplitscreen__right-side"
+      >
+        {this.props.rightSide}
+      </StyledRightSide>
+      <Draggable
+        handle=".DraggableSplitscreen__handle"
+        ref={this.bindRef}
+        zIndex={100}
+        bounds="parent"
+        axis="x"
+        onDrag={this.onDrag}
+      >
+        <StyledHandle className="DraggableSplitscreen__handle" />
+      </Draggable>
+    </StyledContainer>
+  )
 }
