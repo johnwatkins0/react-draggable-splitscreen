@@ -1,7 +1,7 @@
 /* eslint jsx-a11y/media-has-caption: 0 */
 import React from 'react';
 
-import DraggableSplitscreen from '../../src/DraggableSplitscreen';
+import DraggableSplitscreen from '../../src/draggable-splitscreen';
 
 const Left = () => (
   <video
@@ -23,11 +23,6 @@ const Right = () => (
   />
 );
 
-const Video = () => (
-  <DraggableSplitscreen
-    leftSide={<Left />}
-    rightSide={<Right />}
-  />
-);
+const Video = () => <DraggableSplitscreen leftSide={<Left />} rightSide={<Right />} />;
 
 export default Video;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DraggableSplitscreen from '../../src/DraggableSplitscreen';
+import DraggableSplitscreen from '../../src/draggable-splitscreen';
 
 const LeftSide = () => (
   <img
@@ -18,8 +18,6 @@ const RightSide = () => (
   />
 );
 
-const Image = () => (
-  <DraggableSplitscreen leftSide={<LeftSide />} rightSide={<RightSide />} />
-);
+const Image = () => <DraggableSplitscreen leftSide={<LeftSide />} rightSide={<RightSide />} />;
 
 export default Image;

@@ -1,13 +1,12 @@
 import React from 'react';
 
-import DraggableSplitscreen from '../../src/DraggableSplitscreen';
+import DraggableSplitscreen from '../../src/draggable-splitscreen';
 
 const Left = () => (
   <div style={{ backgroundColor: 'blue', padding: '6rem' }}>
-    <h2>
-  Left side
-    </h2>
-  </div>);
+    <h2>Left side</h2>
+  </div>
+);
 
 const Right = () => (
   <div
@@ -17,17 +16,10 @@ const Right = () => (
       textAlign: 'right',
     }}
   >
-    <h2>
-      Right side
-    </h2>
+    <h2>Right side</h2>
   </div>
 );
 
-const Text = () => (
-  <DraggableSplitscreen
-    leftSide={<Left />}
-    rightSide={<Right />}
-  />
-);
+const Text = () => <DraggableSplitscreen leftSide={<Left />} rightSide={<Right />} />;
 
 export default Text;
