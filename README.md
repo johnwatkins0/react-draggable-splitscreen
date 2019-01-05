@@ -1,6 +1,6 @@
 # react-draggable-splitscreen
 
-A React component for displaying overlapping elements with a draggable splitscreen-like effect. See examples [here](https://johnwatkins0.github.io/react-draggable-splitscreen/example/).
+A React component for displaying overlapping elements with a draggable splitscreen-like effect. See examples [here](https://johnwatkins0.github.io/react-draggable-splitscreen/).
 
 ## Install
 

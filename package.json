@@ -1,16 +1,18 @@
 {
   "name": "react-draggable-splitscreen",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "A React component for displaying overlapping elements with a draggable splitscreen-like effect.",
   "main": "dist/",
   "scripts": {
-    "start": "parcel example/src/index.html -d example -o --public-url /react-draggable-splitscreen/example/",
-    "build-example": "parcel build example/src/index.html -d example --public-url /react-draggable-splitscreen/example/",
+    "start": "parcel docs/src/index.html -d docs -o --public-url /react-draggable-splitscreen/docs/",
+    "build-example": "parcel build docs/src/index.html -d docs --public-url /react-draggable-splitscreen/docs/",
     "build": "rm -rf dist && tsc",
-    "lint": "tslint --project .",
-    "prepare": "npm run build",
-    "pretest": "npm run lint",
-    "test": "jest"
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn lint && yarn test",
+    "test": "jest",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
