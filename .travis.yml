@@ -4,3 +4,6 @@ cache:
 node_js:
   - stable
   - 6
+notifications:
+  email: false
+  slack: johnwatkins0:VNM6Rad4WILTZAwHDY4xbybX
