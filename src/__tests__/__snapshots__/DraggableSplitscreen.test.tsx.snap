@@ -19,7 +19,7 @@ exports[`DraggableSplitscreen renders a text-based element 1`] = `
     </div>
   </div>
   <div
-    className="sc-bwzfXH gbnVeh"
+    className="sc-htpNat hkAeFy"
   >
     <div
       style={
@@ -36,7 +36,7 @@ exports[`DraggableSplitscreen renders a text-based element 1`] = `
     </div>
   </div>
   <div
-    className="react-draggable sc-htpNat bhkyHK"
+    className="react-draggable sc-bwzfXH bNIIdl"
     onMouseDown={[Function]}
     onMouseUp={[Function]}
     onTouchEnd={[Function]}
@@ -72,7 +72,7 @@ exports[`DraggableSplitscreen renders a video-based element 1`] = `
     />
   </div>
   <div
-    className="sc-bwzfXH gbnVeh"
+    className="sc-htpNat hkAeFy"
   >
     <video
       autoPlay={true}
@@ -89,7 +89,7 @@ exports[`DraggableSplitscreen renders a video-based element 1`] = `
     />
   </div>
   <div
-    className="react-draggable sc-htpNat bhkyHK"
+    className="react-draggable sc-bwzfXH bNIIdl"
     onMouseDown={[Function]}
     onMouseUp={[Function]}
     onTouchEnd={[Function]}
@@ -122,7 +122,7 @@ exports[`DraggableSplitscreen renders an image-based element. 1`] = `
     />
   </div>
   <div
-    className="sc-bwzfXH gbnVeh"
+    className="sc-htpNat hkAeFy"
   >
     <img
       alt="Right Side"
@@ -136,7 +136,7 @@ exports[`DraggableSplitscreen renders an image-based element. 1`] = `
     />
   </div>
   <div
-    className="react-draggable sc-htpNat bhkyHK"
+    className="react-draggable sc-bwzfXH bNIIdl"
     onMouseDown={[Function]}
     onMouseUp={[Function]}
     onTouchEnd={[Function]}

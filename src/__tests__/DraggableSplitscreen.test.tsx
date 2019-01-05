@@ -1,5 +1,5 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import * as React from 'react';
+import * as renderer from 'react-test-renderer';
 
 import Image from '../../example/src/Image';
 import Text from '../../example/src/Text';
@@ -24,4 +24,3 @@ describe('DraggableSplitscreen', () => {
     expect(tree).toMatchSnapshot();
   });
 });
-
