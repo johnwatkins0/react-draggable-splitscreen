@@ -13,7 +13,7 @@ yarn add react-draggable-splitscreen
 The component takes two props, `leftSide` and `rightSide`, both of which must be rendered React elements/components.
 
 ```Javascript
-import React from 'react';
+import * as React from 'react';
 import Splitscreen from 'react-draggable-splitscreen';
 
 const MyLeftSide = () => <img src="some/image" />;

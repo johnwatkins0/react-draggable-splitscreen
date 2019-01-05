@@ -1,5 +1,5 @@
 /* eslint jsx-a11y/media-has-caption: 0 */
-import React from 'react';
+import * as React from 'react';
 
 import DraggableSplitscreen from '../../src/draggable-splitscreen';
 
