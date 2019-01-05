@@ -112,7 +112,7 @@ exports[`DraggableSplitscreen renders an image-based element. 1`] = `
   <div>
     <img
       alt="Left Side"
-      src="/react-draggable-splitscreen/docs/assets/left-side.png"
+      src="mock-file"
       style={
         Object {
           "height": "auto",
@@ -126,7 +126,7 @@ exports[`DraggableSplitscreen renders an image-based element. 1`] = `
   >
     <img
       alt="Right Side"
-      src="/react-draggable-splitscreen/docs/assets/right-side.png"
+      src="mock-file"
       style={
         Object {
           "height": "auto",

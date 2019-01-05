@@ -4,8 +4,8 @@
   "description": "A React component for displaying overlapping elements with a draggable splitscreen-like effect.",
   "main": "dist/",
   "scripts": {
-    "start": "parcel docs/src/index.html -d docs -o --public-url /react-draggable-splitscreen/docs/",
-    "build-example": "parcel build docs/src/index.html -d docs --public-url /react-draggable-splitscreen/docs/",
+    "start": "parcel src/docs/index.html -d docs -o --public-url .",
+    "build-example": "rm -rf docs && parcel build src/docs/index.html -d docs --public-url .",
     "build": "rm -rf dist && tsc",
     "lint": "tslint -p tsconfig.json",
     "prepare": "yarn build",
