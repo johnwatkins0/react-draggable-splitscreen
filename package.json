@@ -1,12 +1,13 @@
 {
   "name": "react-draggable-splitscreen",
-  "version": "2.0.0",
+  "version": "3.0.1",
   "description": "A React component for displaying overlapping elements with a draggable splitscreen-like effect.",
-  "main": "src/index.js",
+  "main": "dist/",
   "scripts": {
     "start": "parcel example/src/index.html -d example -o --public-url /react-draggable-splitscreen/example/",
-    "build": "parcel build example/src/index.html -d example --public-url /react-draggable-splitscreen/example/",
-    "lint": "eslint src",
+    "build-example": "parcel build example/src/index.html -d example --public-url /react-draggable-splitscreen/example/",
+    "build": "rm -rf dist && tsc",
+    "lint": "tslint --project .",
     "prepare": "npm run build",
     "pretest": "npm run lint",
     "test": "jest"
@@ -22,27 +23,26 @@
   },
   "homepage": "https://github.com/johnwatkins0/react-draggable-splitscreen#readme",
   "dependencies": {
-    "prop-types": "^15.5.8",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "16.7.0-alpha.2",
+    "react-dom": "16.7.0-alpha.2",
     "react-draggable": "^3.0.4",
     "styled-components": "^2.4.0"
   },
   "devDependencies": {
-    "babel-eslint": "^8.1.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.14.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jest": "^21.15.1",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "eslint-plugin-jest": "^22.1.2",
     "jest": "^22.0.4",
     "parcel-bundler": "^1.3.1",
-    "react-test-renderer": "^16.2.0"
-  }
+    "prettier": "^1.15.3",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.2.2"
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }

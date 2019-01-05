@@ -1,6 +1,11 @@
 module.exports = {
-  testMatch: ['**/?(*.)(spec|test).js?(x)'],
+  moduleDirectories: ['node_modules', 'src'],
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.(js|jsx)?$': 'babel-jest',
+  },
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
+  moduleFileExtensions: ['ts', 'js'],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.js'],
-  coveragePathIgnorePatterns: ['/node_modules/', 'index.js'],
+  cache: false,
 };

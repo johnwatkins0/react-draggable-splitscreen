@@ -1,0 +1,9 @@
+{
+  "defaultSeverity": "error",
+
+  "jsRules": {},
+  "rules": {
+    "interface-name": [true, "never-prefix"]
+  },
+  "rulesDirectory": []
+}
