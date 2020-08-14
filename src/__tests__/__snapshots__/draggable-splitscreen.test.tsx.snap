@@ -2,9 +2,11 @@
 
 exports[`DraggableSplitscreen renders a text-based element 1`] = `
 <div
-  className="sc-bdVaJa cQtrjW"
+  className="sc-AxjAm gndcwd"
 >
-  <div>
+  <div
+    className="sc-AxhCb bYAasw"
+  >
     <div
       style={
         Object {
@@ -19,7 +21,12 @@ exports[`DraggableSplitscreen renders a text-based element 1`] = `
     </div>
   </div>
   <div
-    className="sc-htpNat hkAeFy"
+    className="sc-AxiKw haJeYw"
+    style={
+      Object {
+        "clipPath": "inset(0 0 0 calc(50% + 0px))",
+      }
+    }
   >
     <div
       style={
@@ -36,14 +43,12 @@ exports[`DraggableSplitscreen renders a text-based element 1`] = `
     </div>
   </div>
   <div
-    className="react-draggable sc-bwzfXH bNIIdl"
+    className="sc-AxirZ cHTZsB react-draggable"
     onMouseDown={[Function]}
     onMouseUp={[Function]}
     onTouchEnd={[Function]}
-    onTouchStart={[Function]}
     style={
       Object {
-        "touchAction": "none",
         "transform": "translate(0px,0px)",
       }
     }
@@ -54,9 +59,11 @@ exports[`DraggableSplitscreen renders a text-based element 1`] = `
 
 exports[`DraggableSplitscreen renders a video-based element 1`] = `
 <div
-  className="sc-bdVaJa cQtrjW"
+  className="sc-AxjAm gndcwd"
 >
-  <div>
+  <div
+    className="sc-AxhCb bYAasw"
+  >
     <video
       autoPlay={true}
       loop={true}
@@ -72,7 +79,12 @@ exports[`DraggableSplitscreen renders a video-based element 1`] = `
     />
   </div>
   <div
-    className="sc-htpNat hkAeFy"
+    className="sc-AxiKw haJeYw"
+    style={
+      Object {
+        "clipPath": "inset(0 0 0 calc(50% + 0px))",
+      }
+    }
   >
     <video
       autoPlay={true}
@@ -89,14 +101,12 @@ exports[`DraggableSplitscreen renders a video-based element 1`] = `
     />
   </div>
   <div
-    className="react-draggable sc-bwzfXH bNIIdl"
+    className="sc-AxirZ cHTZsB react-draggable"
     onMouseDown={[Function]}
     onMouseUp={[Function]}
     onTouchEnd={[Function]}
-    onTouchStart={[Function]}
     style={
       Object {
-        "touchAction": "none",
         "transform": "translate(0px,0px)",
       }
     }
@@ -107,43 +117,48 @@ exports[`DraggableSplitscreen renders a video-based element 1`] = `
 
 exports[`DraggableSplitscreen renders an image-based element. 1`] = `
 <div
-  className="sc-bdVaJa cQtrjW"
+  className="sc-AxjAm gndcwd"
 >
-  <div>
+  <div
+    className="sc-AxhCb bYAasw"
+  >
     <img
       alt="Left Side"
       src="mock-file"
       style={
         Object {
-          "height": "auto",
+          "height": "100%",
           "width": "100%",
         }
       }
     />
   </div>
   <div
-    className="sc-htpNat hkAeFy"
+    className="sc-AxiKw haJeYw"
+    style={
+      Object {
+        "clipPath": "inset(0 0 0 calc(50% + 0px))",
+      }
+    }
   >
     <img
       alt="Right Side"
       src="mock-file"
       style={
         Object {
-          "height": "auto",
+          "height": "100%",
           "width": "100%",
         }
       }
     />
   </div>
   <div
-    className="react-draggable sc-bwzfXH bNIIdl"
+    className="sc-AxirZ cHTZsB react-draggable"
     onMouseDown={[Function]}
     onMouseUp={[Function]}
     onTouchEnd={[Function]}
-    onTouchStart={[Function]}
     style={
       Object {
-        "touchAction": "none",
         "transform": "translate(0px,0px)",
       }
     }
