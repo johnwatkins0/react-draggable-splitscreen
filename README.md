@@ -5,7 +5,7 @@ A React component for displaying overlapping elements with a draggable splitscre
 ## Install
 
 ```
-yarn add react-draggable-splitscreen
+npm install react-draggable-splitscreen
 ```
 
 ## Usage
