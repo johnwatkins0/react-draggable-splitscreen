@@ -4,6 +4,7 @@ import Draggable from 'react-draggable';
 import Container from './container';
 import Handle from './handle';
 import RightSide from './right-side';
+import { LeftSide } from './left-side';
 
 interface DraggableSplitscreenProps {
   leftSide: any;
@@ -17,16 +18,16 @@ export default function DraggableSplitscreen({ leftSide, rightSide }: DraggableS
   const [rightPosition, setRightPosition] = React.useState(0);
   const draggable = React.useRef(null);
 
-  function onDrag() {
+  const onDrag = React.useCallback(() => {
     setRightPosition(draggable.current.state.x);
-  }
+  }, [])
 
-  const clipPath = `inset(0 0 0 calc(50% + ${rightPosition}px))`;
+  const clipPathStyle = { clipPath: `inset(0 0 0 calc(50% + ${rightPosition}px))` };
 
   return (
     <Container>
-      <div>{leftSide}</div>
-      <RightSide clipPathStyle={clipPath}>{rightSide}</RightSide>
+      <LeftSide>{leftSide}</LeftSide>
+      <RightSide clipPathStyle={clipPathStyle}>{rightSide}</RightSide>
       <Draggable ref={draggable} bounds="parent" axis="x" onDrag={onDrag}>
         <Handle />
       </Draggable>

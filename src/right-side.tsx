@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 interface RightSideProps {
-  clipPathStyle: string;
+  clipPathStyle: React.CSSProperties;
   children: object[];
 }
 
@@ -14,13 +14,13 @@ const StyledRightSide = styled.div`
   left: 0;
   height: 100%;
 
-  > * {
-    clip-path: ${({ clipPathStyle }: RightSideProps) => (clipPathStyle ? clipPathStyle : 'none')};
+  img {
+    object-fit: cover;
   }
 `;
 
 function RightSide({ clipPathStyle, children }: RightSideProps) {
-  return <StyledRightSide clipPathStyle={clipPathStyle}>{children}</StyledRightSide>;
+  return <StyledRightSide style={clipPathStyle}>{children}</StyledRightSide>;
 }
 
 export default RightSide;

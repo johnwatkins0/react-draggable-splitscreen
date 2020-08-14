@@ -12,6 +12,10 @@ const StyledContainer = styled.div`
     bottom: 0px;
     left: 50%;
   }
+
+  img {
+    object-fit: cover;
+  }
 `;
 
 export default StyledContainer;
