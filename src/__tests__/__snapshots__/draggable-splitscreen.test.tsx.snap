@@ -5,7 +5,7 @@ exports[`DraggableSplitscreen renders a text-based element 1`] = `
   className="sc-AxjAm gndcwd"
 >
   <div
-    className="sc-AxhCb bYAasw"
+    className="sc-AxhCb jhcvFR"
   >
     <div
       style={
@@ -21,7 +21,7 @@ exports[`DraggableSplitscreen renders a text-based element 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxiKw haJeYw"
+    className="sc-AxiKw eMhiMp"
     style={
       Object {
         "clipPath": "inset(0 0 0 calc(50% + 0px))",
@@ -62,7 +62,7 @@ exports[`DraggableSplitscreen renders a video-based element 1`] = `
   className="sc-AxjAm gndcwd"
 >
   <div
-    className="sc-AxhCb bYAasw"
+    className="sc-AxhCb jhcvFR"
   >
     <video
       autoPlay={true}
@@ -79,7 +79,7 @@ exports[`DraggableSplitscreen renders a video-based element 1`] = `
     />
   </div>
   <div
-    className="sc-AxiKw haJeYw"
+    className="sc-AxiKw eMhiMp"
     style={
       Object {
         "clipPath": "inset(0 0 0 calc(50% + 0px))",
@@ -120,21 +120,15 @@ exports[`DraggableSplitscreen renders an image-based element. 1`] = `
   className="sc-AxjAm gndcwd"
 >
   <div
-    className="sc-AxhCb bYAasw"
+    className="sc-AxhCb jhcvFR"
   >
     <img
       alt="Left Side"
       src="mock-file"
-      style={
-        Object {
-          "height": "100%",
-          "width": "100%",
-        }
-      }
     />
   </div>
   <div
-    className="sc-AxiKw haJeYw"
+    className="sc-AxiKw eMhiMp"
     style={
       Object {
         "clipPath": "inset(0 0 0 calc(50% + 0px))",
@@ -144,12 +138,6 @@ exports[`DraggableSplitscreen renders an image-based element. 1`] = `
     <img
       alt="Right Side"
       src="mock-file"
-      style={
-        Object {
-          "height": "100%",
-          "width": "100%",
-        }
-      }
     />
   </div>
   <div
