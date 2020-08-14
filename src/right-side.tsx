@@ -15,7 +15,9 @@ const StyledRightSide = styled.div`
   height: 100%;
 
   img {
+    height: 100%;
     object-fit: cover;
+    width: 100%;
   }
 `;
 

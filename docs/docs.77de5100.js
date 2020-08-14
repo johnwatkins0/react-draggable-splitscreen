@@ -34113,7 +34113,7 @@ var React = __importStar(require("react"));
 
 var styled_components_1 = __importDefault(require("styled-components"));
 
-var StyledRightSide = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  height: 100%;\n\n  img {\n    object-fit: cover;\n  }\n"], ["\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  height: 100%;\n\n  img {\n    object-fit: cover;\n  }\n"])));
+var StyledRightSide = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  height: 100%;\n\n  img {\n    height: 100%;\n    object-fit: cover;\n    width: 100%;\n  }\n"], ["\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  height: 100%;\n\n  img {\n    height: 100%;\n    object-fit: cover;\n    width: 100%;\n  }\n"])));
 
 function RightSide(_a) {
   var clipPathStyle = _a.clipPathStyle,
@@ -34153,7 +34153,7 @@ exports.LeftSide = void 0;
 
 var styled_components_1 = __importDefault(require("styled-components"));
 
-exports.LeftSide = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: relative;\n\n  img {\n    object-fit: cover;\n  }\n"], ["\n  position: relative;\n\n  img {\n    object-fit: cover;\n  }\n"])));
+exports.LeftSide = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: relative;\n\n  img {\n    height: 100%;\n    object-fit: cover;\n    width: 100%;\n  }\n"], ["\n  position: relative;\n\n  img {\n    height: 100%;\n    object-fit: cover;\n    width: 100%;\n  }\n"])));
 var templateObject_1;
 },{"styled-components":"../../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../draggable-splitscreen.tsx":[function(require,module,exports) {
 "use strict";
@@ -34333,22 +34333,14 @@ var right_side_png_1 = __importDefault(require("../assets/right-side.png"));
 function LeftSide() {
   return React.createElement("img", {
     src: left_side_png_1.default,
-    alt: "Left Side",
-    style: {
-      width: '100%',
-      height: '100%'
-    }
+    alt: "Left Side"
   });
 }
 
 function RightSide() {
   return React.createElement("img", {
     src: right_side_png_1.default,
-    alt: "Right Side",
-    style: {
-      width: '100%',
-      height: '100%'
-    }
+    alt: "Right Side"
   });
 }
 
@@ -34672,7 +34664,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54625" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55276" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
