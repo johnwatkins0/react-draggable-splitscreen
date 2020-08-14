@@ -8,8 +8,8 @@
     "build-example": "rm -rf docs && parcel build src/docs/index.html -d docs --public-url .",
     "build": "rm -rf dist && tsc",
     "lint": "tslint -p tsconfig.json",
-    "prepare": "yarn build",
-    "prepublishOnly": "yarn lint && yarn test",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint && npm run test",
     "test": "jest",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
